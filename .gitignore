@@ -1,0 +1,9 @@
+node_modules
+artifacts
+artifacts-zk
+cache
+cache-zk
+csv
+
+yarn.lock
+env.json

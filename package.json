@@ -1,0 +1,49 @@
+{
+  "name": "hardhat-ledger",
+  "version": "0.0.1",
+  "author": "Quan Tran <tranthienbaoquan@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "compile": "hardhat compile",
+    "test": "hardhat test",
+    "start:dev": "hardhat node",
+    "migrate:local": "hardhat run --network localhost scripts/migrate-erc20-erc721.js",
+    "migrate:zksync": "hardhat run --network zkTestnet scripts/migrate-zksync.js",
+    "migrate:testnet": "hardhat run --network zkTestnet scripts/migrate-erc20-erc721.js",
+    "migrate-exchange:ganache": "hardhat run --network ganache scripts/migrate-exchange-ganache.js",
+    "migrate-exchange:testnet": "hardhat run --network goerli scripts/migrate-exchange.js",
+    "migrate-tournament:testnet": "hardhat run --network testnet scripts/migrate-tournament.js",
+    "migrate-ino:testnet": "hardhat run --network testnet scripts/migrate-ino.js",
+    "migrate-operation:testnet": "hardhat run --network testnet scripts/migrate-operation.js",
+    "migrate-operation:mainnet": "hardhat run --network mainnet scripts/migrate-operation.js",
+    "migrate:mainnet": "hardhat run --network mainnet scripts/migrate-tournament.js",
+    "verify:testnet": "hardhat verify --network testnet --constructor-args scripts/arguments.js 0x0",
+    "verify:mainnet": "hardhat verify --network mainnet --constructor-args scripts/arguments.js 0xe47aCe09F0E5A1508Ef90D920c6f3251fC8e9957",
+    "airdrop:testnet": "hardhat run --network testnet scripts/airdrop.js",
+    "airdrop:mainnet": "hardhat run --network mainnet scripts/airdrop.js"
+  },
+  "dependencies": {
+    "@ethersproject/hardware-wallets": "^5.5.0",
+    "@ledgerhq/hw-app-eth": "^6.26.0",
+    "@ledgerhq/hw-transport-node-hid": "^6.24.1",
+    "@matterlabs/hardhat-zksync-deploy": "^0.6.2",
+    "@matterlabs/hardhat-zksync-solc": "^0.3.14",
+    "@nomiclabs/hardhat-ethers": "^2.0.5",
+    "@nomiclabs/hardhat-etherscan": "^3.1.7",
+    "@nomiclabs/hardhat-web3": "^2.0.0",
+    "@openzeppelin/contracts": "^4.5.0",
+    "@openzeppelin/contracts-upgradeable": "^4.5.2",
+    "@openzeppelin/hardhat-upgrades": "^1.15.0",
+    "@openzeppelin/test-helpers": "^0.5.15",
+    "chai": "^4.3.6",
+    "csvtojson": "^2.0.10",
+    "ethereum-waffle": "^3.4.0",
+    "ethers": "^5.5.4",
+    "hardhat": "^2.9.1",
+    "web3": "^1.7.1",
+    "zksync-web3": "^0.13.1"
+  },
+  "devDependencies": {
+    "@matterlabs/hardhat-zksync-verify": "^0.1.3"
+  }
+}
